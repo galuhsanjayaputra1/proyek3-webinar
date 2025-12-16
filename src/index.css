@@ -1,0 +1,105 @@
+/* Reset dasar agar tampilan konsisten di semua browser */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Import font modern seperti MySkill */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* Style global */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #ffffff;
+  color: #111827;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Wrapper umum untuk memberi batas kiri kanan */
+.wrapper {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 24px;
+}
+
+/* Link default */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Utility class */
+.text-center {
+  text-align: center;
+}
+
+.mt-2 { margin-top: 16px; }
+.mt-3 { margin-top: 24px; }
+.mt-4 { margin-top: 32px; }
+
+.mb-2 { margin-bottom: 16px; }
+.mb-3 { margin-bottom: 24px; }
+.mb-4 { margin-bottom: 32px; }
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Button biru (mirip MySkill Primary Button) */
+.btn-primary {
+  background: #2563eb;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+}
+
+/* Button outline */
+.btn-outline {
+  border: 1px solid #2563eb;
+  color: #2563eb;
+}
+
+.btn-outline:hover {
+  background: #2563eb;
+  color: white;
+}
+
+/* Section styling global */
+section {
+  padding: 80px 0;
+}
+
+/* Judul section */
+section h2 {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #111827;
+}
+
+section p {
+  text-align: center;
+  max-width: 700px;
+  margin: auto;
+  color: #4b5563;
+}
+
+/* Responsif umum */
+@media (max-width: 768px) {
+  section {
+    padding: 50px 0;
+  }
+
+  section h2 {
+    font-size: 28px;
+  }
+}

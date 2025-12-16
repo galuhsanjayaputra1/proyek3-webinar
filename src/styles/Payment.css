@@ -1,0 +1,124 @@
+.payment-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+.payment-summary {
+  width: 380px;
+  padding: 25px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.event-title {
+  font-size: 17px;
+  margin-top: -5px;
+  margin-bottom: 15px;
+}
+
+.payment-summary input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+}
+
+.promo-btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  background: #fff7e6;
+  border: 1px solid #ffce81;
+  border-radius: 8px;
+}
+
+.pay-method-btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  background: #2563eb;
+  border: none;
+  color: white;
+  border-radius: 10px;
+}
+
+.qris-box {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 12px;
+  background: #f0f9ff;
+  border: 1px solid #badeff;
+  text-align: center;
+}
+
+.qris-img {
+  width: 200px;
+  margin: 10px auto;
+}
+
+.waiting-text {
+  color: #f97316;
+}
+
+.paid-text {
+  color: #16a34a;
+  font-weight: bold;
+}
+
+.total-box {
+  margin-top: 30px;
+}
+
+.btn-blue {
+  width: 100%;
+  padding: 13px;
+  margin-top: 20px;
+  background: #2563eb;
+  color: white;
+  border-radius: 12px;
+  border: none;
+  font-size: 15px;
+}
+/* POPUP OVERLAY */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+}
+
+/* POPUP BOX KECIL */
+.popup-box {
+  background: white;
+  width: 260px;
+  padding: 20px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  animation: fadeIn .25s ease-in-out;
+}
+
+.popup-box h4 {
+  margin-bottom: 10px;
+  color: #16a34a;
+}
+
+.popup-btn {
+  margin-top: 12px;
+  padding: 8px 20px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}

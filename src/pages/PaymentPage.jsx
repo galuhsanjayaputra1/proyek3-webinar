@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { eventList } from "../data/EventsSection";
+import { useData } from "../context/DataContext";
 import "../styles/Payment.css";
 import { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
@@ -8,7 +8,8 @@ import Footer from "../components/Footer";
 function PaymentPage() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const event = eventList[id];
+  const { events } = useData();
+  const event = events[id];
 
   const [openQRIS, setOpenQRIS] = useState(false);
   const [qrPaid, setQrPaid] = useState(false);

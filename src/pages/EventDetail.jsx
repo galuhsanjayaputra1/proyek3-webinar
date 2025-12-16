@@ -1,12 +1,13 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { eventList } from "../data/EventsSection";
+import { useData } from "../context/DataContext";
 import "../styles/EventDetail.css";
 import { useState } from "react";
 
 function EventDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const event = eventList[id];
+  const { events } = useData();
+  const event = events[id];
 
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -32,22 +33,22 @@ function EventDetail() {
   return (
     <div className="modal-overlay">
       <div className="modal-box">
-        
+
         <h2>Pendaftaran Event</h2>
 
         {/* INPUT FORM */}
         <div className="input-group">
           <label>Email</label>
-          <input 
-            type="email" 
+          <input
+            type="email"
             placeholder="Masukkan email kamu"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
 
           <label>No. HP</label>
-          <input 
-            type="text" 
+          <input
+            type="text"
             placeholder="Masukkan no. HP kamu"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
@@ -68,8 +69,8 @@ function EventDetail() {
         <div className="modal-buttons">
           <button onClick={() => navigate("/home")} className="btn-gray">Tutup</button>
 
-          <button 
-            onClick={handlePayment} 
+          <button
+            onClick={handlePayment}
             className="btn-blue"
             disabled={!email || !phone} // ❗ tombol disable jika belum terisi
             style={{

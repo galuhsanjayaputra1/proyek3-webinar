@@ -1,10 +1,11 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { eventList } from "../data/EventsSection";
+import { useData } from "../context/DataContext";
 import "../styles/CoursePage.css";
 
 function CoursePage() {
   const { id } = useParams();
-  const event = eventList[id];
+  const { events } = useData();
+  const event = events[id];
 
   const navigate = useNavigate(); // ▶ fungsi navigate
 
@@ -27,7 +28,12 @@ function CoursePage() {
         {/* VIDEO PLAYBACK */}
         <div className="video-section">
           {event.video ? (
-            <video controls controlsList="nodownload" onContextMenu={(e) => e.preventDefault()}>
+            <video
+              key={event.video}
+              controls
+              controlsList="nodownload"
+              onContextMenu={(e) => e.preventDefault()}
+            >
               <source src={event.video} type="video/mp4" />
               Browser kamu tidak mendukung video.
             </video>
@@ -134,6 +140,7 @@ function CoursePage() {
                     {/* PDF Viewer */}
                     <div style={{ flex: 1, position: 'relative', background: '#525659' }}>
                       <iframe
+                        key={event.pdf}
                         src={`${event.pdf}#toolbar=0&navpanes=0&view=FitH`}
                         width="100%"
                         height="100%"
@@ -145,6 +152,7 @@ function CoursePage() {
                   </div>
                 </div>
               </>
+
             ) : (
               <ul className="module-list">
                 <li>📘 Pengenalan Dasar</li>

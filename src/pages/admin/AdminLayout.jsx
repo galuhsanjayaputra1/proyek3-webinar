@@ -60,6 +60,18 @@ function AdminLayout() {
                         <span>{admin?.fullname || 'Admin'}</span>
                     </div>
                     <button onClick={handleLogout} className="logout-btn">Logout</button>
+                    <button
+                        onClick={() => {
+                            if (window.confirm('Reset all website data? This will clear all your changes and restore default data.')) {
+                                localStorage.clear();
+                                window.location.reload();
+                            }
+                        }}
+                        className="logout-btn"
+                        style={{ background: '#ef4444', marginTop: '10px' }}
+                    >
+                        Reset Data
+                    </button>
                 </div>
             </aside>
             <main className="admin-content">

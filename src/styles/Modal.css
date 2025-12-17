@@ -1,0 +1,156 @@
+/* Modal Overlay / Backdrop */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    /* Darker for better contrast */
+    backdrop-filter: blur(8px);
+    /* Stronger blur for premium feel */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    /* Ensure it's on top of everything */
+    padding: 20px;
+    /* Prevent touching edges on mobile */
+    opacity: 0;
+    /* Start invisible */
+    animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    /* 'forwards' retains the final state */
+}
+
+/* Modal Content Container */
+.modal-content {
+    background: #ffffff;
+    border-radius: 20px;
+    /* More rounded */
+    width: 100%;
+    max-width: 550px;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow:
+        0 20px 25px -5px rgba(0, 0, 0, 0.1),
+        0 8px 10px -6px rgba(0, 0, 0, 0.1),
+        0 0 0 1px rgba(0, 0, 0, 0.05);
+    /* Subtle border ring */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transform: scale(0.9);
+    opacity: 0;
+    animation: slideUpScale 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.1s;
+    /* Slight delay for staggered effect */
+}
+
+/* Header */
+.modal-header {
+    padding: 24px 32px;
+    border-bottom: 1px solid #f3f4f6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+.modal-close-btn {
+    background: #f3f4f6;
+    border: none;
+    font-size: 1.25rem;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b7280;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close-btn:hover {
+    background-color: #e5e7eb;
+    color: #ef4444;
+    /* Red on hover for close */
+    transform: rotate(90deg);
+}
+
+/* Body */
+.modal-body {
+    padding: 32px;
+    overflow-y: auto;
+    color: #4b5563;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Grid layout for forms in modal */
+.modal-form-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Footer */
+.modal-footer {
+    padding: 24px 32px;
+    border-top: 1px solid #f3f4f6;
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+    background-color: #f9fafb;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUpScale {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Custom Scrollbar */
+.modal-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background-color: #d1d5db;
+    border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: transparent;
+}
